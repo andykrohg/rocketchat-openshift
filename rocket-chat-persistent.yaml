@@ -170,7 +170,8 @@ objects:
       spec:
         volumes:
         - name: mongodb-data
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: rocketchat-mongodb
         containers:
         - name: mongodb
           image: registry.access.redhat.com/rhscl/mongodb-36-rhel7:1-45
